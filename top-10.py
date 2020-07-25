@@ -13,8 +13,8 @@ def get_top10_json():
         new = news['description'].split()
 
         for word in new:
-            if len(word) > 6:
-                top10_list.append(word)
+            if len(word.lower()) > 6:
+                top10_list.append(word.lower())
 
     print(f'ТОП-10 самых встречающихся слов в новостях: {Counter(top10_list).most_common(10)}')
 
@@ -33,8 +33,8 @@ def get_top10_xml():
         all_word = description.text.split()
 
         for word in all_word:
-            if len(word) > 6:
-                top_list_xml.append(word)
+            if len(word.lower()) > 6:
+                top_list_xml.append(word.lower())
 
     print(f'ТОП-10 самых встречающихся слов в новостях: {Counter(top_list_xml).most_common(10)}')
 
